@@ -32,14 +32,28 @@ $( document ).ready( ( ) => {
         ajaxSettings.url = `/getMPby=${constituency}`;
         ajaxSettings.method = 'post';
         $.ajax( ajaxSettings ).done( ( response ) => {
-            console.log( response );
+            let mp = response;
+            console.log(mp);
+            console.log(decrypt(mp.email));
         });
     }
 
     function getValue( e ) {
         e.preventDefault();
-        let postcode = $('input#postcode').val();
+        let postcode = $input.val();
+        $input.val('');
         validate( postcode );
+    }
+    
+    // https://www.saltycrane.com/blog/2015/07/calling-javascript-python-de-cloudflare-scraped-content/
+    function decrypt( string ) {
+        if ( string !== undefined ) {
+            let hash = string.substr(string.indexOf("#") + 1);
+            var e, r, n, i, a = hash;
+            for (e = "", r = parseInt(a.substr(0, 2), 16), n = 2; a.length - n; n += 2) i = parseInt(a.substr(n, 2), 16) ^ r, e += String.fromCharCode(i);
+            return e.toLowerCase();
+        }
+        return '';
     }
 
     $form.on('submit', getValue )
