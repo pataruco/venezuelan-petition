@@ -2,23 +2,34 @@
   "name": "mp-scrapper",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scrape": "node scrape.js"
+    "scrape": "node scrape.js",
+    "start": "node app.js",
+    "test": "mocha tests/*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pataruco/mp-scrapper.git"
+    "url": "git+https://github.com/pataruco/venezuelan-petition.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pataruco/mp-scrapper/issues"
+    "url": "https://github.com/pataruco/venezuelan-petition/issues"
   },
-  "homepage": "https://github.com/pataruco/mp-scrapper#readme",
+  "homepage": "https://github.com/pataruco/venezuelan-petition#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "cheerio": "^1.0.0-rc.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-ejs-layouts": "^2.3.0",
+    "morgan": "^1.8.2",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
   }
 }
