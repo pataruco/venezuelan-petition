@@ -94,17 +94,6 @@ function pushMP( mp ){
     }
 }
 
-// https://www.saltycrane.com/blog/2015/07/calling-javascript-python-de-cloudflare-scraped-content/
-function decrypt( string ) {
-    if ( string !== undefined ) {
-        let hash = string.substr(string.indexOf("#") + 1);
-        var e, r, n, i, a = hash;
-        for (e = "", r = parseInt(a.substr(0, 2), 16), n = 2; a.length - n; n += 2) i = parseInt(a.substr(n, 2), 16) ^ r, e += String.fromCharCode(i);
-        return e.toLowerCase();
-    }
-    return '';
-}
-
 function cleanString( string ) {
     if ( string !== undefined ) {
         return string.replace(/\n/g, '').replace(/^\s+|\s+$/g, "").toLowerCase();
