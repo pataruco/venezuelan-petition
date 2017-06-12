@@ -1,5 +1,7 @@
 @import "./vendor/_normalize.scss";
 
-body {
-    background-color: red;
+#box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
 }

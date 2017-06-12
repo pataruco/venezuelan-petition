@@ -1,6 +1,4 @@
 require('./bootstrap');
 
-
-alert('hola');
-
-console.log('hello');
+// partials
+require('./partials/postcode');
