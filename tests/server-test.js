@@ -13,4 +13,13 @@ describe("Controller", () => {
             .expect(200, done);
         });
     });
+
+    describe("post /getMPby=Westminster North", () =>{
+        it ("should return 200 OK", (done)=>{
+            api
+            .post("/getMPby=Westminster North")
+            .set("Accept", "application/json")
+            .expect(200, done);
+        });
+    });
 });
