@@ -1,3 +1,5 @@
+const MP = require('../model/mp.js');
+
 $( document ).ready( ( ) => {
 
     const $input = $('input#postcode');
@@ -29,13 +31,9 @@ $( document ).ready( ( ) => {
     }
 
     function getMPby( constituency ) {
-        ajaxSettings.url = `/getMPby=${constituency}`;
-        ajaxSettings.method = 'post';
-        $.ajax( ajaxSettings ).done( ( response ) => {
-            let mp = response;
-            console.log(mp);
-            console.log(decrypt(mp.email));
-        });
+        let mp = new MP ( constituency )
+        console.log( mp );
+        console.log(decrypt(mp.email));
     }
 
     function getValue( e ) {
@@ -44,7 +42,7 @@ $( document ).ready( ( ) => {
         $input.val('');
         validate( postcode );
     }
-    
+
     // https://www.saltycrane.com/blog/2015/07/calling-javascript-python-de-cloudflare-scraped-content/
     function decrypt( string ) {
         if ( string !== undefined ) {

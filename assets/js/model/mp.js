@@ -1,5 +1,4 @@
-const members = require('../data/members.json');
-
+const members = require('../../../data/members.json');
 
 class MP {
     constructor( constituency ) {
