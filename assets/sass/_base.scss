@@ -14,3 +14,7 @@ img, svg {
     width: 100%;
     height: auto;
 }
+
+@mixin base-text-shadow( $color ) {
+     text-shadow: .1em .1em transparentize($color, .5);
+}

@@ -1,0 +1,14 @@
+.frontpage {
+    background: -webkit-linear-gradient($c-yellow 0%, $c-yellow 33%, $c-blue 33%, $c-blue 66%, $c-red 66%, $c-red 100%);
+    background: -o-linear-gradient($c-yellow 0%, $c-yellow 33%, $c-blue 33%, $c-blue 66%, $c-red 66%, $c-red 100%);
+    background: linear-gradient($c-yellow 0%, $c-yellow 33%, $c-blue 33%, $c-blue 66%, $c-red 66%, $c-red 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        text-align: center;
+        color: $c-white;
+        font-size: 6rem;
+        @include base-text-shadow( $c-black );
+    }
+}

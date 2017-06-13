@@ -1,0 +1,22 @@
+
+<div class="slider" id="js-slider">
+    <% for( let i = 0; i < news.length; i++) { %>
+        <% let article = news[ i ]%>
+        <div>
+            <article class="slide" style="background-image: url( <%= article.bgImg %>)">
+                <blockquote >
+                    <a href="<%= article.url %>" target="_blank">
+                        <p>
+                            <%= article.title %>
+                        </p>
+                        <footer>
+                            <cite>
+                                <%= article.outlet %>
+                            </cite>
+                        </footer>
+                    </a>
+                </blockquote>
+            </article>
+        </div>
+        <% } %>
+    </div>

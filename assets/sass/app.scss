@@ -1,4 +1,10 @@
 @import "./vendor/_normalize.scss";
+@import "./vendor/slick/slick.scss";
+@import "./vendor/slick/slick-theme.scss";
 @import "variables";
 @import "base";
 @import "fullpage-slider";
+@import "frontpage";
+@import "slide";
+@import "cta";
+@import "postcode-form";

@@ -1,0 +1,63 @@
+.slide {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10% 15%;
+    blockquote {
+        margin: 0;
+        padding: 0;
+
+    }
+    p {
+        font-size: 5rem;
+        color: $c-white;
+        quotes: "\201C""\201D""\2018""\2019";
+        position: relative;
+        @include base-text-shadow( $c-black );
+        &:before{
+            font-size: 10rem;
+            content: open-quote;
+            position: absolute;
+            top: -0.5em;
+            left: -0.5em;
+
+        }
+        &:after {
+            font-size: 10rem;
+            content: close-quote;
+            position: absolute;
+            bottom: -1em;
+            right: 0;
+
+        }
+    }
+    a {
+        font-size: 1rem;
+        color: $c-white;
+        text-decoration: none;
+    }
+}
+
+.slick-dots {
+    bottom: 5%;
+
+    li {
+        button:before {
+            width: 1em;
+            height: 1em;
+            font-size: 1rem;
+            color: $c-dark-grey;
+
+            opacity: 0.75;
+        }
+        &.slick-active {
+            button:before {
+                color: $c-light-grey;
+            }
+        }
+    }
+}
