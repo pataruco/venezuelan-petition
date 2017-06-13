@@ -1,6 +1,8 @@
 $( document ).ready( ( ) => {
     const $slider = $('#js-slider');
     $slider.slick({
-        // adaptiveHeight: true
+        adaptiveHeight: true,
+        dots: true,
+        arrows: true
     });
 });
