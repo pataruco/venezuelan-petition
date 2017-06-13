@@ -32,6 +32,9 @@
             &:focus {
                 outline: none;
             }
+            &.is-active {
+                background-color: transparentize(#ccc, .1);
+            }
         }
     }
 }
