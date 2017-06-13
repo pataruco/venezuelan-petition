@@ -1,5 +1,6 @@
 @import "./vendor/_normalize.scss";
-@import "node_modules/slick-carousel/slick/slick.scss";
+@import "./vendor/slick/slick.scss";
+@import "./vendor/slick/slick-theme.scss";
 @import "variables";
 @import "base";
 @import "fullpage-slider";
