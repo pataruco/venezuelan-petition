@@ -1,8 +1,9 @@
 $( document ).ready( ( ) =>{
 
     const $fullscreenSlide = $('.js-fullscreen-section');
-    const $window = $(window)
-    const $navButtons = $('#js-fullscreen-section-nav  button')
+    const $window = $(window);
+    const $navButtons = $('#js-fullscreen-section-nav  button');
+
     //easy scroll
     $(function() {
         $('a[href*="#"]:not([href="#"])').click(function() {
@@ -22,7 +23,7 @@ $( document ).ready( ( ) =>{
     function checkSlidePosition ( e ) {
         for ( let slide of $fullscreenSlide ) {
             let $slide = $( slide );
-            if ( isScrolledIntoView( $slide ) ) {
+            if ( $slide.isOnScreen() ) {
                 return slideIsInTheView( $slide );
             }
         }
@@ -30,26 +31,11 @@ $( document ).ready( ( ) =>{
 
     function slideIsInTheView( $slide ) {
         let sectionId = $slide.attr('id');
-        console.log( sectionId );
         let $button = $(`a[href="#${ sectionId }"] > button`);
-        console.log( $button );
         $navButtons.removeClass('is-active');
         $button.addClass('is-active');
     }
 
-    function isScrolledIntoView(elem) {
-        let docViewTop = $window.scrollTop();
-        let docViewBottom = docViewTop + $window.height();
-
-        let elemTop = $(elem).offset().top;
-        let elemBottom = elemTop + $(elem).height();
-
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-
     $window.on('scroll', checkSlidePosition );
-
-
-
-
+    $window.on('load', checkSlidePosition() );
 })// end of document
