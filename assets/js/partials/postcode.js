@@ -10,6 +10,7 @@ $( document ).ready( ( ) => {
 
     function validate ( postcode ) {
         ajaxSettings.url = `https://api.postcodes.io/postcodes/${postcode}/validate`;
+        ajaxSettings.method = 'GET';
         $.ajax( ajaxSettings ).done( ( response ) => {
             let validation = response;
             if ( validation.result ) {
@@ -21,6 +22,7 @@ $( document ).ready( ( ) => {
 
     function getConstituency( postcode ) {
         ajaxSettings.url = `https://api.postcodes.io/postcodes?q=${postcode}`;
+        ajaxSettings.method = 'GET';
         $.ajax( ajaxSettings ).done( ( response ) => {
             let constituency = response.result[0].parliamentary_constituency;
             console.log( constituency );
@@ -44,7 +46,7 @@ $( document ).ready( ( ) => {
         $input.val('');
         validate( postcode );
     }
-    
+
     // https://www.saltycrane.com/blog/2015/07/calling-javascript-python-de-cloudflare-scraped-content/
     function decrypt( string ) {
         if ( string !== undefined ) {

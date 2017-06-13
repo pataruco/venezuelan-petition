@@ -1,0 +1,43 @@
+.fullscreen {
+    position: relative;
+    &__section {
+        width: 100vw;
+        height: 100vh;
+        border-bottom: 2px solid black;
+        &:last-of-type {
+            margin-bottom: none;
+        }
+    }
+    &__nav {
+        position:fixed;
+        right: $base-unit;
+        z-index: 10;
+        top:50%;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            margin-bottom: $base-unit;
+        }
+        button {
+            display: block;
+            width: $base-unit * 2;
+            height: $base-unit * 2;
+            background-color: transparentize(#ccc, .7);
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            &:hover {
+                background-color: transparentize(#ccc, .4);
+            }
+            &:focus {
+                outline: none;
+            }
+            &.is-active {
+                background-color: transparentize(#ccc, .1);
+            }
+        }
+    }
+}
