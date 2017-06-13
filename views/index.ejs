@@ -3,46 +3,11 @@
 		<h1>Venezuelan appeal</h1>
 	</section>
 	<section class="fullscreen__section js-fullscreen-section" id="full-screen-section-2">
-		<div class="slider" id="js-slider">
-			<article>your content</article>
-			<article>your content</article>
-			<article>your content</article>
-		</div>
+		<% include slick.ejs %>
 	</section>
 	<section class="fullscreen__section js-fullscreen-section" id="full-screen-section-3">
-        <form class="form" action="/postcode" method="post" id="js-postcode-form">
-            <label for="postcode">Postcode</label>
-            <input type="text" name="postcode" value="" id="postcode">
-            <button type="submit">Get your constituency</button>
-        </form>
+		<% include postcode-form.ejs %>
 	</section>
 	<section class="fullscreen__section js-fullscreen-section" id="full-screen-section-4">Some section</section>
-	<nav class="fullscreen__nav">
-		<ul id="js-fullscreen-section-nav">
-			<li>
-				<a href="#full-screen-section-1">
-					<button>
-					</button>
-				</a>
-			</li>
-			<li>
-				<a href="#full-screen-section-2">
-					<button>
-					</button>
-				</a>
-			</li>
-			<li>
-				<a href="#full-screen-section-3">
-					<button>
-					</button>
-				</a>
-			</li>
-			<li>
-				<a href="#full-screen-section-4">
-					<button>
-					</button>
-				</a>
-			</li>
-		</ul>
-	</nav>
+	<% include fullscreen-nav.ejs %>
 </main>
