@@ -1,20 +1,26 @@
 
 <div class="slider" id="js-slider">
     <% for( let i = 0; i < news.length; i++) { %>
-        <% let article = news[i] %>
-        <article style=" ">
-            <blockquote>
+        <% let article = news[ i ]%>
+        <article >
+            <blockquote style="background-image: url( <%= article.bgImg %>)">
                 <p>
-                    <%= article.title%>
+                    <%= article.title %>
                 </p>
                 <footer>
                     <cite>
-                        <a href="  " target="_blank">
-
+                        <a href="<%= article.url %>" target="_blank">
+                            <%= article.outlet %>
                         </a>
                     </cite>
                 </footer>
             </blockquote>
         </article>
-        <% } %>
+    <% } %>
 </div>
+
+
+<%# title": "Venezuela's mass anti-government demonstrations enter third month",
+"outlet": "The Guardian",
+"url": "https://www.theguardian.com/world/2017/jun/10/anti-government-demonstrations-convulse-venezuela",
+"bg-image":%>
