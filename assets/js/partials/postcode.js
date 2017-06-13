@@ -2,6 +2,10 @@ $( document ).ready( ( ) => {
 
     const $input = $('input#postcode');
     const $form = $('#js-postcode-form');
+    const $constituency = $('#js-mp-constituency');
+    const $mp = $('#js-mp');
+    const $email = $('#js-mp-email');
+    const $twiter = $('#js-mp-twitter')
     const ajaxSettings = {
         async: true,
         crossDomain: true,
@@ -35,9 +39,17 @@ $( document ).ready( ( ) => {
         ajaxSettings.method = 'post';
         $.ajax( ajaxSettings ).done( ( response ) => {
             let mp = response;
-            console.log(mp);
-            console.log(decrypt(mp.email));
+            mp.email = decrypt(mp.email);
+            renderMp( mp );
         });
+    }
+
+    function renderMp( mp ) {
+        // console.log( mp );
+        $constituency.text( mp.constituency.replace(/\b\w/g, l => l.toUpperCase() ) );
+        $mp.text( mp.name.replace(/\b\w/g, l => l.toUpperCase() ) );
+        $email.text( mp.email ).attr('href', `mailto:${ mp.email }`);
+        $twitter.text( mp.twitter.handler ).attr('href', mp.twitter.url );
     }
 
     function getValue( e ) {
