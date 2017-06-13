@@ -1,24 +1,20 @@
 
 <div class="slider" id="js-slider">
-    <article>
-        <blockquote>
-            <p>Venezuela man set alight at anti-government protest dies</p>
+    <% for( let i = 0; i < news.length; i++) { %>
+        <% let article = news[i] %>
+        <article style=" ">
+            <blockquote>
+                <p>
+                    <%= article.title%>
+                </p>
                 <footer>
                     <cite>
-                        <a href="http://www.bbc.co.uk/news/world-latin-america-40157729/" target="_blank">BBC News</a>
+                        <a href="  " target="_blank">
+
+                        </a>
                     </cite>
                 </footer>
             </blockquote>
-    </article>
-    <article>
-        <blockquote>
-            <p>Venezuela's mass anti-government demonstrations enter third month</p>
-                <footer>
-                    <cite>
-                        <a href="https://www.theguardian.com/world/2017/jun/10/anti-government-demonstrations-convulse-venezuela" target="_blank">The Guardian</a>
-                    </cite>
-                </footer>
-            </blockquote>
-    </article>
-    <article>your content</article>
+        </article>
+        <% } %>
 </div>
