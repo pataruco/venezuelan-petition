@@ -7,7 +7,13 @@ $( document ).ready( ( ) => {
     const $email = $('#js-mp-email');
     const $twitter = $('#js-mp-twitter');
     const $website = $('#js-mp-website');
-    const $mpReveal = $('.js-mp-reveal');
+    const $MPReveal = $('.js-mp-reveal');
+    const $MPButton = $('#js-mp-button');
+    const $letterReveal = $('.js-letter-reveal');
+    const $emailtime = $('#js-email-time');
+    const $emailTo = $('#js-email-addressed');
+    const $emailInput = $('.js-email-name');
+    const $emailForm = $('#js-email-form');
     const ajaxSettings = {
         async: true,
         crossDomain: true,
@@ -16,6 +22,7 @@ $( document ).ready( ( ) => {
 
     let postcodeApiData = {}
     let mpData = { }
+
 
     function validate ( postcode ) {
         ajaxSettings.url = `https://api.postcodes.io/postcodes/${postcode}/validate`;
@@ -44,21 +51,22 @@ $( document ).ready( ( ) => {
         ajaxSettings.method = 'post';
         $.ajax( ajaxSettings ).done( ( response ) => {
             mp = response;
+            mpData = response;
             mp.email = decrypt(mp.email);
             renderMp( mp );
         });
     }
 
-    function showMPReveal( ) {
-        $mpReveal.slideDown( 500 )
+    function showReveal( $element ){
+        $element.slideDown( 600 )
             .addClass('center-align');
         $('html, body').animate({
-            scrollTop: $mpReveal.offset().top
+            scrollTop: $element.offset().top
         }, 1000 );
     }
 
     function renderMp( mp ) {
-        showMPReveal( );
+        showReveal( $MPReveal );
         renderMPConstituency( mp );
         renderMPName( mp );
         renderMPEmail( mp );
@@ -118,6 +126,44 @@ $( document ).ready( ( ) => {
         return '';
     }
 
-    $form.on('submit', getValue )
+    function renderEmailDate( ) {
+        let today = moment().format('Do of MMM of YYYY');
+        $emailtime.text( today );
+    }
+
+    function renderEmailTo() {
+        let addressTo = mp.address_as.replace( /\b\w/g, l => l.toUpperCase() )
+        $emailTo.text( addressTo  );
+    }
+
+    function revealLetter( e ) {
+         showReveal( $letterReveal )
+         renderEmailDate();
+         renderEmailTo();
+    }
+    function sendEmail( e ) {
+        e.preventDefault();
+        let from = $emailInput.val( );
+        window.location.href = `mailto:${ mpData.email}?subject=${ 'Venezuela Appeal'}&body=` + emailBody( from );
+    }
+
+    function emailBody( from ) {
+        let body =
+        `Dear ${ mpData.address_as.replace( /\b\w/g, l => l.toUpperCase() ) },
+        %0D%0A
+        %0D%0A
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        %0D%0A
+        %0D%0A
+
+        ${ from }
+        `;
+
+        return body;
+    }
+
+    $emailForm.on('submit', sendEmail );
+    $MPButton.on('click', revealLetter );
+    $form.on('submit', getValue );
 
 }); //end of document
