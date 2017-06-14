@@ -1,0 +1,34 @@
+.mp {
+    @include center-align;
+    article {
+        padding: 2em;
+        border: 2px solid $c-black;
+        box-shadow: .1em .1em 0  $c-black;
+    }
+
+    div {
+        display: none;
+    }
+
+    dt {
+        font-size: 2rem;
+        margin-bottom: .125em;
+        font-weight: 600;
+    }
+
+    dd {
+        font-size: 1.5rem;
+        text-align:left;
+        margin-left: 0;
+        margin-bottom: .33em;
+    }
+    a {
+        text-decoration: none;
+        color: $c-black;
+        &:hover {
+            color: transparentize($c-black, .25);
+        }
+    }
+
+
+}

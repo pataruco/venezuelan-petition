@@ -3,7 +3,7 @@ $( document ).ready( ( ) => {
     const $input = $('input#postcode');
     const $form = $('#js-postcode-form');
     const $constituency = $('#js-mp-constituency');
-    const $mp = $('#js-mp');
+    const $name = $('#js-mp');
     const $email = $('#js-mp-email');
     const $twiter = $('#js-mp-twitter')
     const ajaxSettings = {
@@ -45,11 +45,24 @@ $( document ).ready( ( ) => {
     }
 
     function renderMp( mp ) {
-        // console.log( mp );
-        $constituency.text( mp.constituency.replace(/\b\w/g, l => l.toUpperCase() ) );
-        $mp.text( mp.name.replace(/\b\w/g, l => l.toUpperCase() ) );
-        $email.text( mp.email ).attr('href', `mailto:${ mp.email }`);
-        $twitter.text( mp.twitter.handler ).attr('href', mp.twitter.url );
+        renderMPConstituency( mp )
+        renderMPName( mp );
+        // $mp.text( mp.name.replace(/\b\w/g, l => l.toUpperCase() ) );
+        // $email.text( mp.email ).attr('href', `mailto:${ mp.email }`);
+        // $twitter.text( mp.twitter.handler ).attr('href', mp.twitter.url );
+    }
+
+    function renderMPName( mp ) {
+        let name = mp.name;
+        name = name.replace( /\b\w/g, l => l.toUpperCase() );
+        name = name.replace('Mp', 'MP');
+        $name.show().find('dd').text( name );
+    }
+
+    function renderMPConstituency( mp ) {
+        $constituency.show().
+            find('dd').
+            text(  mp.constituency.replace(/\b\w/g, l => l.toUpperCase() ) );
     }
 
     function getValue( e ) {
