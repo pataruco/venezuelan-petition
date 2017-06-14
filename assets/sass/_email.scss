@@ -1,0 +1,66 @@
+.email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    article {
+        width: 75%;
+        max-width: 960px;
+        border: 1px solid $c-black;
+        box-shadow: .1em .1em 0  $c-black;
+        padding: 2em;
+        margin-bottom: $base-unit * 2;
+    }
+
+    time {
+        display: block;
+        text-align: right;
+    }
+    p {
+        font-size: 1.25rem;
+    }
+
+    label {
+        font-size: 1.25rem;
+        display: block;
+        color: $c-dark-grey;
+        margin-bottom: 1em;
+    }
+    input {
+        display: block;
+        width: 20%;
+        font-size: 1.25rem;
+        border: 1px solid transparent;
+        color: $c-dark-grey;
+        &:hover, &:focus, &:active {
+            color: $c-black;
+            border-bottom: 1px solid $c-black;
+            outline: none;
+        }
+        &-webkit-autofill {
+            background-color: $c-white !important;
+        }
+    }
+
+    button {
+        font-size: 2rem;
+        display: block;
+        border: none;
+        background-color: $c-white;
+        border: 2px solid $c-black;
+        padding: .24em .5em;
+        margin: 0 auto;
+        a {
+            text-decoration: none;
+            color: $c-black;
+        }
+        &:hover, &focus {
+            background-color: $c-black;
+            color: $c-white;
+            border-color: $c-white;
+            a {
+                color: $c-white;
+            }
+        }
+    }
+}

@@ -2,11 +2,20 @@ $( document ).ready( ( ) => {
 
     const $input = $('input#postcode');
     const $form = $('#js-postcode-form');
+    const $constituency = $('#js-mp-constituency');
+    const $name = $('#js-mp');
+    const $email = $('#js-mp-email');
+    const $twitter = $('#js-mp-twitter');
+    const $website = $('#js-mp-website');
+    const $mpReveal = $('.js-mp-reveal');
     const ajaxSettings = {
         async: true,
         crossDomain: true,
         method: 'GET'
     }
+
+    let postcodeApiData = {}
+    let mpData = { }
 
     function validate ( postcode ) {
         ajaxSettings.url = `https://api.postcodes.io/postcodes/${postcode}/validate`;
@@ -24,8 +33,8 @@ $( document ).ready( ( ) => {
         ajaxSettings.url = `https://api.postcodes.io/postcodes?q=${postcode}`;
         ajaxSettings.method = 'GET';
         $.ajax( ajaxSettings ).done( ( response ) => {
+            let postcodeApiData  = response.result[0];
             let constituency = response.result[0].parliamentary_constituency;
-            console.log( constituency );
             getMPby( constituency );
         });
     }
@@ -34,10 +43,61 @@ $( document ).ready( ( ) => {
         ajaxSettings.url = `/getMPby=${constituency}`;
         ajaxSettings.method = 'post';
         $.ajax( ajaxSettings ).done( ( response ) => {
-            let mp = response;
-            console.log(mp);
-            console.log(decrypt(mp.email));
+            mp = response;
+            mp.email = decrypt(mp.email);
+            renderMp( mp );
         });
+    }
+
+    function showMPReveal( ) {
+        $mpReveal.slideDown( 500 )
+            .addClass('center-align');
+        $('html, body').animate({
+            scrollTop: $mpReveal.offset().top
+        }, 1000 );
+    }
+
+    function renderMp( mp ) {
+        showMPReveal( );
+        renderMPConstituency( mp );
+        renderMPName( mp );
+        renderMPEmail( mp );
+        renderMPTwitter( mp );
+        renderMPWebsite( mp );
+    }
+
+    function renderMPWebsite( mp ) {
+        $website.show()
+            .find('dd > a')
+            .text( mp.website )
+            .attr('href', mp.website );
+    }
+
+    function renderMPTwitter( mp ) {
+        $twitter.show( )
+            .find('dd > a ')
+            .text( mp.twitter.handler )
+            .attr('href', mp.twitter.url );
+    }
+
+    function renderMPEmail ( mp ) {
+        $email.show()
+            .find('dd > a')
+            .text( mp.email )
+            .attr('href', `mailto:${ mp.email }`);
+    }
+
+    function renderMPName( mp ) {
+        let name = mp.name;
+        name = name.replace( /\b\w/g, l => l.toUpperCase() )
+                    .replace('Mp', 'MP');
+        $name.show().find('dd').text( name );
+    }
+
+    function renderMPConstituency( mp ) {
+        $constituency.show().
+            find('dd').
+            text(  mp.constituency.replace(/\b\w/g, l => l.toUpperCase() ) );
     }
 
     function getValue( e ) {
