@@ -14,6 +14,9 @@ $( document ).ready( ( ) => {
         method: 'GET'
     }
 
+    let postcodeApiData = {}
+    let mpData = { }
+
     function validate ( postcode ) {
         ajaxSettings.url = `https://api.postcodes.io/postcodes/${postcode}/validate`;
         ajaxSettings.method = 'GET';
@@ -30,8 +33,8 @@ $( document ).ready( ( ) => {
         ajaxSettings.url = `https://api.postcodes.io/postcodes?q=${postcode}`;
         ajaxSettings.method = 'GET';
         $.ajax( ajaxSettings ).done( ( response ) => {
+            let postcodeApiData  = response.result[0];
             let constituency = response.result[0].parliamentary_constituency;
-            console.log( constituency );
             getMPby( constituency );
         });
     }
@@ -40,7 +43,7 @@ $( document ).ready( ( ) => {
         ajaxSettings.url = `/getMPby=${constituency}`;
         ajaxSettings.method = 'post';
         $.ajax( ajaxSettings ).done( ( response ) => {
-            let mp = response;
+            mp = response;
             mp.email = decrypt(mp.email);
             renderMp( mp );
         });
