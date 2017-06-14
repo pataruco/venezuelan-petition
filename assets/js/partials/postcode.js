@@ -5,7 +5,9 @@ $( document ).ready( ( ) => {
     const $constituency = $('#js-mp-constituency');
     const $name = $('#js-mp');
     const $email = $('#js-mp-email');
-    const $twiter = $('#js-mp-twitter')
+    const $twitter = $('#js-mp-twitter');
+    const $website = $('#js-mp-website');
+    const $mpReveal = $('.js-mp-reveal');
     const ajaxSettings = {
         async: true,
         crossDomain: true,
@@ -44,18 +46,48 @@ $( document ).ready( ( ) => {
         });
     }
 
+    function showMPReveal( ) {
+        $mpReveal.slideDown( 500 )
+            .addClass('center-align');
+        $('html, body').animate({
+            scrollTop: $mpReveal.offset().top
+        }, 1000 );
+    }
+
     function renderMp( mp ) {
-        renderMPConstituency( mp )
+        showMPReveal( );
+        renderMPConstituency( mp );
         renderMPName( mp );
-        // $mp.text( mp.name.replace(/\b\w/g, l => l.toUpperCase() ) );
-        // $email.text( mp.email ).attr('href', `mailto:${ mp.email }`);
-        // $twitter.text( mp.twitter.handler ).attr('href', mp.twitter.url );
+        renderMPEmail( mp );
+        renderMPTwitter( mp );
+        renderMPWebsite( mp );
+    }
+
+    function renderMPWebsite( mp ) {
+        $website.show()
+            .find('dd > a')
+            .text( mp.website )
+            .attr('href', mp.website );
+    }
+
+    function renderMPTwitter( mp ) {
+        $twitter.show( )
+            .find('dd > a ')
+            .text( mp.twitter.handler )
+            .attr('href', mp.twitter.url );
+    }
+
+    function renderMPEmail ( mp ) {
+        $email.show()
+            .find('dd > a')
+            .text( mp.email )
+            .attr('href', `mailto:${ mp.email }`);
     }
 
     function renderMPName( mp ) {
         let name = mp.name;
-        name = name.replace( /\b\w/g, l => l.toUpperCase() );
-        name = name.replace('Mp', 'MP');
+        name = name.replace( /\b\w/g, l => l.toUpperCase() )
+                    .replace('Mp', 'MP');
         $name.show().find('dd').text( name );
     }
 

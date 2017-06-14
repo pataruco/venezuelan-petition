@@ -1,9 +1,13 @@
 .mp {
-    @include center-align;
+    display: none;
+    background-color: $c-red;
+    color: $c-white;
+    flex-direction: column;
     article {
         padding: 2em;
-        border: 2px solid $c-black;
-        box-shadow: .1em .1em 0  $c-black;
+        border: 2px solid $c-white;
+        box-shadow: .1em .1em 0  $c-white;
+        margin-bottom: $base-unit * 2;
     }
 
     div {
@@ -24,11 +28,26 @@
     }
     a {
         text-decoration: none;
-        color: $c-black;
+        color: $c-white;
         &:hover {
-            color: transparentize($c-black, .25);
+            color: transparentize($c-white, .25);
         }
     }
 
+    button {
+        font-size: 2rem;
+        display: block;
+        border: none;
+        background-color: $c-red;
+        border: 2px solid $c-white;
+        color: $c-white;
+        padding: .24em .5em;
+        margin: 0 auto;
+        &:hover, &focus {
+            background-color: $c-white;
+            color: $c-red;
+            border-color: $c-red;
+        }
+    }
 
 }
