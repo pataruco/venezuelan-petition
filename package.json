@@ -1,7 +1,7 @@
 {
   "name": "mp-scrapper",
   "version": "1.0.0",
-  "description": "",
+  "description": "Venezuelan Appeal to UK House of Commons",
   "main": "app.js",
   "scripts": {
     "scrape": "node scrape.js",
@@ -14,6 +14,9 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "engines": {
+      "node": "v8.1.0"
   },
   "repository": {
     "type": "git",
