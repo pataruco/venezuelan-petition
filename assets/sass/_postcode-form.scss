@@ -17,6 +17,14 @@
         margin-bottom: $base-unit * 2;
         padding-left: .25em;
         text-align: center;
+        &.has-error {
+            background-color: $c-error;
+            border: 1px solid white;
+            &::placeholder {
+                color: $c-white;
+            }
+        }
+
     }
     button {
         font-size: 2rem;
