@@ -36,7 +36,7 @@
                 outline: none;
             }
             &.is-active {
-                background-color: transparentize(#ccc, .1);
+                background-color: transparentize($c-white, .1);
             }
         }
     }

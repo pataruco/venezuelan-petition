@@ -3,6 +3,6 @@ $( document ).ready( ( ) => {
     $slider.slick({
         adaptiveHeight: true,
         dots: true,
-        arrows: true
+        arrows: true,
     });
 });
