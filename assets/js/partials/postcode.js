@@ -32,7 +32,7 @@ $( document ).ready( ( ) => {
             if ( validation.result ) {
                 return getConstituency( postcode );
             }
-            console.error( `postcode ${postcode} not valid` );
+            $input.addClass('has-error animated shake').attr('placeholder', 'Postcode not found');
         });
     }
 
@@ -149,21 +149,26 @@ $( document ).ready( ( ) => {
 
     function emailBody( from ) {
         let body =
-        `Dear ${ mpData.address_as.replace( /\b\w/g, l => l.toUpperCase() ) },
-        %0D%0A
-        %0D%0A
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        %0D%0A
-        %0D%0A
+            `Dear ${ mpData.address_as.replace( /\b\w/g, l => l.toUpperCase() ) },
+            %0D%0A
+            %0D%0A
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            %0D%0A
+            %0D%0A
 
-        ${ from }
+            ${ from }
         `;
 
         return body;
     }
 
+    function clearError ( e ) {
+        $(this).removeClass('has-error animated shake').attr('placeholder', 'Postcode');
+    }
+
     $emailForm.on('submit', sendEmail );
     $MPButton.on('click', revealLetter );
     $form.on('submit', getValue );
+    $input.on('focus', clearError )
 
 }); //end of document
