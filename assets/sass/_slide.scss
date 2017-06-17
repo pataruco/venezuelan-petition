@@ -42,6 +42,22 @@
     }
 }
 
+.slick-arrow {
+    z-index: 100;
+}
+
+.slick-prev {
+    left: 5.2%;
+}
+
+.slick-next {
+    right: 8%;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 4rem;
+}
+
 .slick-dots {
     bottom: 5%;
 
