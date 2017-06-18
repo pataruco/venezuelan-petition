@@ -1,7 +1,11 @@
 $base-font-size: 14px;
+$base-tablet-font-size: 12px;
+$base-mobile-font-size: 10px;
 $base-unit: 10px;
 $base-font-family: sans-serif;
 $padding: $base-unit * 2;
+$tablet: 767px;
+$mobile: 319px;
 
 // colours
 $c-red: #CF142B;

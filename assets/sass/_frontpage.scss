@@ -10,5 +10,8 @@
         color: $c-white;
         font-size: 6rem;
         @include base-text-shadow( $c-black );
+        @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
+            font-size: 4rem;
+        }
     }
 }
