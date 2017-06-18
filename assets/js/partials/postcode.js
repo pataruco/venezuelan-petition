@@ -1,5 +1,5 @@
 $( document ).ready( ( ) => {
-
+    const mailtoLink = require('mailtolink');
     const $input = $('input#postcode');
     const $form = $('#js-postcode-form');
     const $constituency = $('#js-mp-constituency');
@@ -144,22 +144,24 @@ $( document ).ready( ( ) => {
     function sendEmail( e ) {
         e.preventDefault();
         let from = $emailInput.val( );
-        window.location.href = `mailto:${ mpData.email}?subject=${ 'Venezuela Appeal'}&body=` + emailBody( from );
+        let email = setEmail( from );
+        window.location.href = email;
     }
 
-    function emailBody( from ) {
-        let body =
-            `Dear ${ mpData.address_as.replace( /\b\w/g, l => l.toUpperCase() ) },
-            %0D%0A
-            %0D%0A
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            %0D%0A
-            %0D%0A
-
-            ${ from }
-        `;
-
-        return body;
+    function setEmail( from ) {
+        let email = mailtoLink(mpData.email, {
+            subject: 'Venezuela Appeal',
+            body: [
+                `Dear ${ mpData.address_as.replace( /\b\w/g, l => l.toUpperCase() ) },`,
+                ``,
+                `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+                ``,
+                `Your Sincerously`,
+                ``,
+                `${ from }`
+            ].join('\n')
+        });
+        return email;
     }
 
     function clearError ( e ) {
