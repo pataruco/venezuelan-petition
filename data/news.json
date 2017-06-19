@@ -10,6 +10,24 @@
         "outlet": "BBC News",
         "url": "http://www.bbc.co.uk/news/world-latin-america-40157729",
         "bgImg": "https://i.guim.co.uk/img/media/17b1911203a0b01d3affa9881532b14f23baaa11/0_0_3500_2334/master/3500.jpg?w=1920&q=55&auto=format&usm=12&fit=max&s=fed0aa52a7d7ad64d4f01a4ac453c5c5"
+    },
+    {
+        "title": "On the frontline of Venezuela's punishing protests",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/world/2017/may/25/venezuela-protests-riots-frontline-caracas-nicolas-maduro",
+        "bgImg": "https://i.guim.co.uk/img/media/0d523a2d2d8dee8d1d1b68e042dd656b64933043/0_306_4657_2794/master/4657.jpg?w=1300&q=20&auto=format&usm=12&fit=max&dpr=2&s=67ad50de70faa14e6ac0f4ea5aa69dba"
+    },
+    {
+        "title": "Venezuela protests: 200,000 march against President Maduro as riots and looting spread across country",
+        "outlet": "The Telegraph",
+        "url": "http://www.telegraph.co.uk/news/2017/05/21/venezuela-protests-200000-march-against-president-maduro-riots/",
+        "bgImg": "https://i.guim.co.uk/img/media/4181808baf1dd645b8d77b93dd284c3b2a25124a/0_158_4928_2957/master/4928.jpg?w=1920&q=55&auto=format&usm=12&fit=max&s=10ae77df549173c1a8ef4a9f0da735f4"
+    },
+    {
+        "title": "Venezuela: Mass rally, violent clashes in 50th day of protests",
+        "outlet": "CNN",
+        "url": "http://edition.cnn.com/2017/05/21/americas/venezuela-50-day-protests/index.html",
+        "bgImg": "http://i2.cdn.cnn.com/cnnnext/dam/assets/170521031740-02-venezuela-50-protests-super-169.jpg"
     }
 
 ]
