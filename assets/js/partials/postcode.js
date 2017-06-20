@@ -58,7 +58,7 @@ $( document ).ready( ( ) => {
     }
 
     function showReveal( $element ){
-        $element.slideDown( 500 )
+        $element.slideDown( 600 )
             .addClass('center-align');
         $('html, body').animate({
             scrollTop: $element.offset().top

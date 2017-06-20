@@ -54,10 +54,14 @@
 
 .slick-prev {
     left: 5.2%;
+    width: initial;
+    height: initial;
 }
 
 .slick-next {
     right: 8%;
+    width: initial;
+    height: initial;
 }
 
 .slick-prev:before, .slick-next:before {
