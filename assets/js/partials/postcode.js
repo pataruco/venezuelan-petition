@@ -150,13 +150,23 @@ $( document ).ready( ( ) => {
 
     function setEmail( from ) {
         let email = mailtoLink(mpData.email, {
-            subject: 'Venezuela Appeal',
+            subject: 'Basic Constitutional Freedoms in Venezuela',
             body: [
                 `Dear ${ mpData.address_as.replace( /\b\w/g, l => l.toUpperCase() ) },`,
                 ``,
-                `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+                `House of Commons`,
                 ``,
-                `Your Sincerously`,
+                `London`,
+                ``,
+                `SW1A 0AA`,
+                ``,
+                `Re.: Basic Constitutional Freedoms in Venezuela`,
+                ``,
+                `Playing an active role as MP in one of the most influent and leading democracies within the International Community must be the toughest and grateful experiences a civil servant could experience. In a way, you do not only represent my interests as a UK resident, but also serve as an inspiring example to all other foreign government systems based in the respect of Constitutional Freedoms and Human Rights.`,
+                ``,
+                `Bearing that in mind, I would deeply appreciate if you could share your thoughts in regards to the current situation in Venezuela, where 79 students have died, and more than 15.000 have been injured as a result of the brutal repression the National Armed Forces have executed on behalf the Government to silence the protests for the food and medicine scarcity, and the basic constitutional guarantees.`,
+                ``,
+                `Yours Sincerously`,
                 ``,
                 `${ from }`
             ].join('\n')
