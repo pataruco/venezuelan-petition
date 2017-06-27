@@ -19,6 +19,15 @@
         font-size: 1.25rem;
     }
 
+    address > p {
+        margin:0;
+    }
+
+    strong {
+        text-align: right;
+        display: block;
+    }
+
     label {
         font-size: 1.25rem;
         display: block;

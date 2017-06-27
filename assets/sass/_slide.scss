@@ -20,9 +20,12 @@
         color: $c-white;
         quotes: "\201C""\201D""\2018""\2019";
         position: relative;
-        @include base-text-shadow( $c-black );
+        @include base-text-shadow( transparentize( $c-black, .2) );
         @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
             font-size: 3rem;
+        }
+        &:hover {
+            @include base-text-shadow( $c-black );
         }
         &:before{
             font-size: 10rem;
@@ -38,7 +41,6 @@
             position: absolute;
             bottom: -1em;
             right: 0;
-
         }
     }
     a {
