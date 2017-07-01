@@ -54,22 +54,23 @@
             font-size: 3rem;
         }
         &:hover {
+            color: $c-light-grey;
             @include base-text-shadow( $c-black );
         }
         &:before{
-            font-size: 10rem;
+            font-size: 2em;
             content: open-quote;
             position: absolute;
-            top: -0.5em;
-            left: -0.5em;
+            top: -0.3em;
+            left: -0.4em;
 
         }
         &:after {
-            font-size: 10rem;
+            font-size: 2em;
             content: close-quote;
             position: absolute;
-            bottom: -1em;
-            right: 0;
+            margin-left: 0.1em;
+            bottom: -0.4em;
         }
     }
     a {
@@ -82,22 +83,6 @@
 .slick-arrow {
     z-index: 100;
 }
-
-// .slick-prev {
-//     left: 5.2%;
-//     width: initial;
-//     height: initial;
-// }
-//
-// .slick-next {
-//     right: 8%;
-//     width: initial;
-//     height: initial;
-// }
-//
-// .slick-prev:before, .slick-next:before {
-//     font-size: 4rem;
-// }
 
 .slick-dots {
     bottom: 5%;

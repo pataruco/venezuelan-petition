@@ -13,5 +13,8 @@
 
     p {
         font-size: 3rem;
+        @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
+            text-align: center;
+        }
     }
 }

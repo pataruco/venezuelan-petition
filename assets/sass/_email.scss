@@ -1,6 +1,10 @@
 .email {
     display: none;
     flex-direction: column;
+    @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
+        width: 100%;
+        height: initial;
+    }
     article {
         width: 75%;
         max-width: 960px;
@@ -8,6 +12,11 @@
         box-shadow: .1em .1em 0  $c-black;
         padding: 2em;
         margin-bottom: $base-unit * 2;
+        @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
+            margin-top: $base-unit * 2;
+            width: 80%;
+            padding: 1.5em;
+        }
     }
 
     time {
@@ -47,6 +56,10 @@
         }
         &-webkit-autofill {
             background-color: $c-white !important;
+        }
+        @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
+            margin-bottom: 1.3em;
+            width: initial;
         }
     }
 

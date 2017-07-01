@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     h1 {
         text-align: center;
         color: $c-white;
@@ -14,4 +15,34 @@
             font-size: 4rem;
         }
     }
+    &__arrow-down {
+        width: 40px;
+        height: 40px;
+        display: block;
+        transform: rotate(45deg);
+        background-color: transparent;
+        border: 1px solid transparent;
+        position: absolute;
+        padding: 0;
+        z-index: 100;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+        bottom: 20px;
+        animation: 1.5s pulse infinite;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1) rotate(45deg);
+      }
+
+      50% {
+        transform: scale3d(1.05, 1.05, 1.05) rotate(45deg);
+      }
+
+      to {
+        transform: scale3d(1, 1, 1) rotate(45deg);
+      }
+
 }

@@ -23,7 +23,7 @@ img, svg {
 }
 
 @mixin base-text-shadow( $color ) {
-     text-shadow: .1em .1em transparentize($color, .5);
+     text-shadow: 0 0 .1em transparentize($color, .5);
 }
 
 @mixin center-align {
