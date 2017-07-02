@@ -1,5 +1,4 @@
 require('./bootstrap');
-
 //vendor
 require('./vendor/is-on-screen');
 require('slick-carousel');

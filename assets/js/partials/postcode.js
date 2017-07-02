@@ -162,11 +162,11 @@ $( document ).ready( ( ) => {
                 ``,
                 `Re.: Basic Constitutional Freedoms in Venezuela`,
                 ``,
-                `Playing an active role as MP in one of the most influent and leading democracies within the International Community must be the toughest and grateful experiences a civil servant could experience. In a way, you do not only represent my interests as a UK resident, but also serve as an inspiring example to all other foreign government systems based in the respect of Constitutional Freedoms and Human Rights.`,
+                `Playing an active role as MP in one of the most influent and leading democracies within the International Community must be the toughest, yet the most grateful experiences a civil servant could achieve. You not only represent my interests as a UK resident, but also serve as an inspiring example to all other foreign government systems based in the respect of Constitutional Freedoms and Human Rights.`,
                 ``,
-                `Bearing that in mind, I would deeply appreciate if you could share your thoughts in regards to the current situation in Venezuela, where 79 students have died, and more than 15.000 have been injured as a result of the brutal repression the National Armed Forces have executed on behalf the Government to silence the protests for the food and medicine scarcity, and the basic constitutional guarantees.`,
+                `With all due respect, I strongly believe that this honourable Parliament cannot remain indifferent, and should take a position as soon as possible.`,
                 ``,
-                `Yours Sincerously`,
+                `Truly yours`,
                 ``,
                 `${ from }`
             ].join('\n')
@@ -181,6 +181,6 @@ $( document ).ready( ( ) => {
     $emailForm.on('submit', sendEmail );
     $MPButton.on('click', revealLetter );
     $form.on('submit', getValue );
-    $input.on('focus', clearError )
+    $input.on('focus', clearError );
 
 }); //end of document
