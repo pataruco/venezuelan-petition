@@ -3,6 +3,11 @@
     background-color: $c-red;
     color: $c-white;
     flex-direction: column;
+    @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
+        width: 100%;
+        height: initial;
+        padding: $base-unit 0;
+    }
     article {
         padding: 2em;
         border: 2px solid $c-white;

@@ -13,6 +13,7 @@
         @include base-text-shadow( $c-black );
         @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
             font-size: 4rem;
+            padding: 0 1em;
         }
     }
     &__arrow-down {
@@ -29,6 +30,7 @@
         border-bottom: 1px solid white;
         bottom: 20px;
         animation: 1.5s pulse infinite;
+        right: calc( 50% - 28.28px);
     }
 }
 

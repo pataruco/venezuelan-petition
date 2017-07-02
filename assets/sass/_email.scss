@@ -11,7 +11,7 @@
         border: 1px solid $c-black;
         box-shadow: .1em .1em 0  $c-black;
         padding: 2em;
-        margin-bottom: $base-unit * 2;
+        margin: $base-unit * 2 0;
         @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
             margin-top: $base-unit * 2;
             width: 80%;
