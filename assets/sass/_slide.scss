@@ -9,6 +9,10 @@
       border: 1px solid transparent;
       position: absolute;
       padding: 0;
+      @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
+          width: 20px;
+          height: 20px;
+      }
       &--right {
         top: calc( 50% - 28.28px);
         right: 5%;
