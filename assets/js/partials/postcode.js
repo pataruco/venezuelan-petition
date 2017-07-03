@@ -14,6 +14,7 @@ $( document ).ready( ( ) => {
     const $emailTo = $('#js-email-addressed');
     const $emailInput = $('.js-email-name');
     const $emailForm = $('#js-email-form');
+    const $emailMPTitle = $('#js-email-mp-title');
     const ajaxSettings = {
         async: true,
         crossDomain: true,
@@ -132,8 +133,10 @@ $( document ).ready( ( ) => {
     }
 
     function renderEmailTo() {
-        let addressTo = mp.address_as.replace( /\b\w/g, l => l.toUpperCase() )
+        let addressTo = mp.address_as.replace( /\b\w/g, l => l.toUpperCase() );
+        let mpTitle = mp.name.replace( /\b\w/g, l => l.toUpperCase() ).replace('Mp', 'MP');
         $emailTo.text( addressTo  );
+        $emailMPTitle.text( mpTitle );
     }
 
     function revealLetter( e ) {
@@ -152,13 +155,15 @@ $( document ).ready( ( ) => {
         let email = mailtoLink(mpData.email, {
             subject: 'Basic Constitutional Freedoms in Venezuela',
             body: [
-                `Dear ${ mpData.address_as.replace( /\b\w/g, l => l.toUpperCase() ) },`,
+                `${ mp.name.replace( /\b\w/g, l => l.toUpperCase() ).replace('Mp', 'MP') }`,
                 ``,
                 `House of Commons`,
                 ``,
                 `London`,
                 ``,
                 `SW1A 0AA`,
+                ``,
+                `Dear ${ mpData.address_as.replace( /\b\w/g, l => l.toUpperCase() ) },`,
                 ``,
                 `Re.: Basic Constitutional Freedoms in Venezuela`,
                 ``,
