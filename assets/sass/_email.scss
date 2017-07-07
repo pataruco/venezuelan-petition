@@ -1,6 +1,7 @@
 .email {
     display: none;
     flex-direction: column;
+    height: initial;
     @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
         width: 100%;
         height: initial;
