@@ -16,7 +16,7 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "engines": {
-    "node": "v8.1.0"
+    "node": "v8.1.4"
   },
   "repository": {
     "type": "git",
