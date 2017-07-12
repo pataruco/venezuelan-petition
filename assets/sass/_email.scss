@@ -50,6 +50,7 @@
         font-size: 1.25rem;
         border: 1px solid transparent;
         color: $c-black;
+        margin-bottom: 2em;
         &:hover, &:focus, &:active {
             color: $c-black;
             border-bottom: 1px solid $c-black;
@@ -59,7 +60,6 @@
             background-color: $c-white !important;
         }
         @media screen and ( min-width: $mobile ) and ( max-width:  $tablet ) {
-            margin-bottom: 1.3em;
             width: initial;
         }
     }
