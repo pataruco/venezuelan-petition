@@ -19,11 +19,26 @@ class MPLinks {
                if ( !error &&  response.statusCode == 200 ) {
                     let $ = cheerio.load(body);
                     let links = $('table > tbody > tr > td > a');
-                    mpLinks = links.map()
+                    let urls = [ ];
+                    for ( var i = 0; i < links.length; i++ ) {
+                        let $element = $( links[i] );
+                        let name = $element.text();
+                        let link = $element.attr('href');
+                        if ( name !== 'back to top' ) {
+                             urls.push( links );
+                        }
+                    }
+                    console.log( urls );
+                    // let MPLinks = links.map( ( link ) => {
+                    //      let $element = $( link );
+                    //      let name = $element.text();
+                    //      console.log( name );
+                    //      let url = $element.attr('href');
+                    // })
                }
           });
      }
 }
 
-let scraper =  new Scraper( );
-scraper.links();
+let scraper =  new MPLinks( );
+scraper.links()
