@@ -15,4 +15,8 @@ router.post('/getMPby=:constituency', ( req, res ) => {
     res.send( mp );
 });
 
+router.get('/wakemydyno.txt', ( req, res ) => {
+    res.sendStatus(200);
+});
+
 module.exports = router;
